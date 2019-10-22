@@ -21,6 +21,19 @@ namespace DiziUygulama
                 Console.WriteLine(a[i]);
             }
             
+            bool durum = true;
+            Console.Write("Aranacak Değeri Giriniz : ");
+            int aranan = Convert.ToInt32(Console.ReadLine());
+            int aranan_deger = Array.IndexOf(a, aranan);
+            foreach (int deger in a)
+            {
+                if (aranan == deger)
+                    durum = false;
+            }
+            if (durum == true)
+                Console.WriteLine("Değer Bulunamadı.");
+            else
+                Console.WriteLine("{0} Değeri Dizinin {1}. Sırasında Bulundu.", aranan, aranan_deger + 1);         
             Console.ReadKey();
         }
     }
